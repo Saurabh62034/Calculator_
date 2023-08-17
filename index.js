@@ -41,11 +41,9 @@ document.querySelector("input").addEventListener("keydown", function (event) {
         }
         else if (buttonKey == "Backspace") {
             string = String(string);
-            let data = string.length - 1;
-            let letter = string.charAt(data);
-            string = string.replace(letter, '');
+            string = string.slice(0,string.length-1);
             document.querySelector('input').value = string;
-            console.log("after backspace buttondown"+string);
+            console.log("after backspace buttondown: "+string);
 
         }
 
@@ -67,7 +65,7 @@ document.querySelector("input").addEventListener("keydown", function (event) {
 
 function myFunction(x){
     if (x == "=") {
-        // console.log("inner button is = then string: "+string);
+        console.log("inner button is = then string: "+string);
 
         string = eval(string);
         document.querySelector('input').value = string;
@@ -82,63 +80,13 @@ function myFunction(x){
         let letter = string.charAt(data);
         string = string.replace(letter, '');
         document.querySelector('input').value = string;
-        // console.log(string);
-
     }
     else if (x == "%") {
         string = string + x;
         // document.querySelector('input').value = string;
     }
-
     else{
         string = string + x;
         document.querySelector('input').value = string;
     }
-        
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// let string = "";
-// let buttons = document.querySelectorAll(".btn");
-
-// Array.from(buttons).forEach((button)=>{
-//     button.addEventListener('click', (element)=>{
-//         // var y = element.this.innerHTML;
-//         // console.log(y);
-//         if(element.target.innerHTML == "="){
-//             string = eval(string);
-//             document.querySelector('input').value = string;
-//             console.log("evaluated");
-//         }
-//         else if (element.target.innerHTML == "clr"){
-//             string = "";
-//             document.querySelector('input').value = string;
-//             console.log("cleared");
-//         }
-//         else if (element.target.id == "k"){
-//             string = button.pop();
-//             document.querySelector('input').value = string;
-//             console.log("back");
-//         }
-
-//         else{
-//             console.log(element.target);
-//             string = string + element.target.innerHTML;
-//             document.querySelector('input').value = string;
-//         }
-        
-//     });
-// });
