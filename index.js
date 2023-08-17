@@ -43,8 +43,9 @@ document.querySelector("input").addEventListener("keydown", function (event) {
             string = String(string);
             let data = string.length - 1;
             let letter = string.charAt(data);
-            string = string.replace(letter, '')
-            // console.log(string);
+            string = string.replace(letter, '');
+            document.querySelector('input').value = string;
+            console.log("after backspace buttondown"+string);
 
         }
 
