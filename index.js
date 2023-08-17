@@ -23,15 +23,13 @@ for(i=0; i<numberOfButtons; i++){
 
     });
 }
-
-
-    document.querySelector("input").addEventListener("keydown", function (event) {
+document.querySelector("input").addEventListener("keydown", function (event) {
         buttonKey = event.key;
 
         // console.log("keybord button = " + buttonKey);
 
         if (buttonKey == "Enter") {
-            // console.log(string);
+            console.log("keydown enter then eval string: "+string);
 
             string = eval(string);
             document.querySelector('input').value = string;
@@ -68,7 +66,7 @@ for(i=0; i<numberOfButtons; i++){
 
 function myFunction(x){
     if (x == "=") {
-        // console.log(string);
+        // console.log("inner button is = then string: "+string);
 
         string = eval(string);
         document.querySelector('input').value = string;
